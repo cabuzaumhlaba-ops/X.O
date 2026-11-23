@@ -18,6 +18,9 @@ jobs:
             cp -a extracted/. .
           fi
 
+      - name: Fix syntax typo in jarvis_service.dart
+        run: sed -i 's/if cCmd != null)/if (cCmd != null)/g' lib/services/jarvis_service.dart
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
